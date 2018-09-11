@@ -1,4 +1,4 @@
-config/config.ini
-templates/*
-vendor/*
+./config/config.ini
+./templates/*
+./vendor/*
 
