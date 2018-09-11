@@ -1,0 +1,568 @@
+body {
+	margin: 0px;
+}
+
+@media screen and (min-width: 1024px) {
+
+	.container-full {
+		width: 100%;
+	}
+	
+}
+
+@media screen and (min-width: 1024px) {
+	
+	.title {
+		text-align: center;
+		font-family: "Agency FB";
+	}
+	
+	.container,
+	.container24 {
+		width: 1280px;
+		margin: auto;
+	}
+	
+	.container div[class*=large],
+	.container24 div[class*=large] {
+		float: left;
+	}
+	
+	/***************************************************************************
+	 * 	SYSTEME 12
+	 */
+	
+	.container .large-12 {
+		width: 100%;
+	}
+	
+	.container .large-11 {
+		width: 91.66%;
+	}
+	
+	.container .large-10 {
+		width: 83.33%;
+	}
+	
+	.container .large-9 {
+		width: 75%;
+	}
+	
+	.container .large-8 {
+		width: 66.66%;
+	}
+	
+	.container .large-7 {
+		width: 58.33%;
+	}
+	
+	.container .large-6 {
+		width: 50%;
+	}
+	
+	.container .large-5 {
+		width: 41.66%;
+	}
+	
+	.container .large-4 {
+		width: 33.33%;
+	}
+	
+	.container .large-3 {
+		width: 25%;
+	}
+	
+	.container .large-2 {
+		width: 16.66%;
+	}
+	
+	.container .large-1 {
+		width: 8.33%;
+	}
+	
+	/**
+	 * 	OFFSET RIGHT RULES 12
+	 */
+	
+	.container .large-1-offset-right {
+		position: relative;
+		left: 8.33%;
+	}
+	
+	.container .large-2-offset-right {
+		position: relative;
+		left: 16.66%;
+	}
+	
+	.container .large-3-offset-right {
+		position: relative;
+		left: 25%;
+	}
+	
+	.container .large-4-offset-right {
+		position: relative;
+		left: 33.33%;
+	}
+	
+	.container .large-5-offset-right {
+		position: relative;
+		left: 41.66%;
+	}
+	
+	.container .large-6-offset-right {
+		position: relative;
+		left: 50%;
+	}
+	
+	.container .large-7-offset-right {
+		position: relative;
+		left: 58.33%;
+	}
+	
+	.container .large-8-offset-right {
+		position: relative;
+		left: 66.66%;
+	}
+	
+	.container .large-9-offset-right {
+		position: relative;
+		left: 75%;
+	}
+	
+	.container .large-10-offset-right {
+		position: relative;
+		left: 83.33%;
+	}
+	
+	.container .large-11-offset-right {
+		position: relative;
+		left: 91.66%;
+	}
+	
+	.container .large-12-offset-right {
+		position: relative;
+		left: 100%;
+	}
+	
+	/**
+	 * 	OFFSET LEFT RULES 12
+	 */
+	
+	.container .large-1-offset-left {
+		position: relative;
+		right: 8.33%;
+	}
+	
+	.container .large-2-offset-left {
+		position: relative;
+		right: 16.66%;
+	}
+	
+	.container .large-3-offset-left {
+		position: relative;
+		right: 25%;
+	}
+	
+	.container .large-4-offset-left {
+		position: relative;
+		right: 33.33%;
+	}
+	
+	.container .large-5-offset-left {
+		position: relative;
+		right: 41.66%;
+	}
+	
+	.container .large-6-offset-left {
+		position: relative;
+		right: 50%;
+	}
+	
+	.container .large-7-offset-left {
+		position: relative;
+		right: 58.33%;
+	}
+	
+	.container .large-8-offset-left {
+		position: relative;
+		right: 66.66%;
+	}
+	
+	.container .large-9-offset-left {
+		position: relative;
+		right: 75%;
+	}
+	
+	.container .large-10-offset-left {
+		position: relative;
+		right: 83.33%;
+	}
+	
+	.container .large-11-offset-left {
+		position: relative;
+		right: 91.66%;
+	}
+	
+	.container .large-12-offset-left {
+		position: relative;
+		right: 100%;
+	}
+
+	
+	/***************************************************************
+	 * 	SYSTEME 24
+	 */
+	
+	.container24 .large-1 {
+		width: 4.16%;
+	}
+	
+	.container24 .large-2 {
+		width: 8.33%;
+	}
+	
+	.container24 .large-3 {
+		width: 12.5%;
+	}
+	
+	.container24 .large-4 {
+		width: 16.66%;
+	}
+	
+	.container24 .large-5 {
+		width: 20.83%;
+	}
+	
+	.container24 .large-6 {
+		width: 25%;
+	}
+	
+	.container24 .large-7 {
+		width: 29.16%;
+	}
+	
+	.container24 .large-8 {
+		width: 33.33%;
+	}
+	
+	.container24 .large-9 {
+		width: 37.5%;
+	}
+	
+	.container24 .large-10 {
+		width: 41.66%;
+	}
+	
+	.container24 .large-11 {
+		width: 45.83%;
+	}
+	
+	.container24 .large-12 {
+		width: 50%;
+	}
+	
+	.container24 .large-13 {
+		width: 54.16%;
+	}
+	
+	.container24 .large-14 {
+		width: 58.33%;
+	}
+	
+	.container24 .large-15 {
+		width: 62.5%;
+	}
+	
+	.container24 .large-16 {
+		width: 66.66%;
+	}
+	
+	.container24 .large-17 {
+		width: 70.83%;
+	}
+	
+	.container24 .large-18 {
+		width: 75%;
+	}
+	
+	.container24 .large-19 {
+		width: 79.16%;
+	}
+	
+	.container24 .large-20 {
+		width: 83.33%;
+	}
+	
+	.container24 .large-21 {
+		width: 87.5%;
+	}
+	
+	.container24 .large-22 {
+		width: 91.66%;
+	}
+	
+	.container24 .large-23 {
+		width: 95.83%;
+	}
+	
+	.container24 .large-24 {
+		width: 100%;
+	}
+	
+	/**
+	 * 	OFFSET RIGHT RULES 24
+	 */
+	
+	.container24 .large-1-offset-right {
+		position: relative;
+		left: 4.16%;
+	}
+	
+	.container24 .large-2-offset-right {
+		position: relative;
+		left: 8.33%;
+	}
+	
+	.container24 .large-3-offset-right {
+		position: relative;
+		left: 12.5%;
+	}
+	
+	.container24 .large-4-offset-right {
+		position: relative;
+		left: 16.66%;
+	}
+	
+	.container24 .large-5-offset-right {
+		position: relative;
+		left: 20.83%;
+	}
+	
+	.container24 .large-6-offset-right {
+		position: relative;
+		left: 25%;
+	}
+	
+	.container24 .large-7-offset-right {
+		position: relative;
+		left: 29.16%;
+	}
+	
+	.container24 .large-8-offset-right {
+		position: relative;
+		left: 33.33%;
+	}
+	
+	.container24 .large-9-offset-right {
+		position: relative;
+		left: 37.5%;
+	}
+	
+	.container24 .large-10-offset-right {
+		position: relative;
+		left: 41.66%;
+	}
+	
+	.container24 .large-11-offset-right {
+		position: relative;
+		left: 45.83%;
+	}
+	
+	.container24 .large-12-offset-right {
+		position: relative;
+		left: 50%;
+	}
+	
+	.container24 .large-13-offset-right {
+		position: relative;
+		left: 54.16%;
+	}
+	
+	.container24 .large-14-offset-right {
+		position: relative;
+		left: 58.33%;
+	}
+	
+	.container24 .large-15-offset-right {
+		position: relative;
+		left: 62.5%;
+	}
+	
+	.container24 .large-16-offset-right {
+		position: relative;
+		left: 66.66%;
+	}
+	
+	.container24 .large-17-offset-right {
+		position: relative;
+		left: 70.93%;
+	}
+	
+	.container24 .large-18-offset-right {
+		position: relative;
+		left: 75%;
+	}
+	
+	.container24 .large-19-offset-right {
+		position: relative;
+		left: 79.16%;
+	}
+	
+	.container24 .large-20-offset-right {
+		position: relative;
+		left: 83.33%;
+	}
+	
+	.container24 .large-21-offset-right {
+		position: relative;
+		left: 87.5%;
+	}
+	
+	.container24 .large-22-offset-right {
+		position: relative;
+		left: 91.66%;
+	}
+	
+	.container24 .large-23-offset-right {
+		position: relative;
+		left: 95.83%;
+	}
+	
+	.container24 .large-24-offset-right {
+		position: relative;
+		left: 100%;
+	}
+	
+	/**
+	 * 	OFFSET LEFT RULES 24
+	 */
+	
+	.container24 .large-1-offset-right {
+		position: relative;
+		right: 4.16%;
+	}
+	
+	.container24 .large-2-offset-right {
+		position: relative;
+		right: 8.33%;
+	}
+	
+	.container24 .large-3-offset-right {
+		position: relative;
+		right: 12.5%;
+	}
+	
+	.container24 .large-4-offset-right {
+		position: relative;
+		right: 16.66%;
+	}
+	
+	.container24 .large-5-offset-right {
+		position: relative;
+		right: 20.83%;
+	}
+	
+	.container24 .large-6-offset-right {
+		position: relative;
+		right: 25%;
+	}
+	
+	.container24 .large-7-offset-right {
+		position: relative;
+		right: 29.16%;
+	}
+	
+	.container24 .large-8-offset-right {
+		position: relative;
+		right: 33.33%;
+	}
+	
+	.container24 .large-9-offset-right {
+		position: relative;
+		right: 37.5%;
+	}
+	
+	.container24 .large-10-offset-right {
+		position: relative;
+		right: 41.66%;
+	}
+	
+	.container24 .large-11-offset-right {
+		position: relative;
+		right: 45.83%;
+	}
+	
+	.container24 .large-12-offset-right {
+		position: relative;
+		right: 50%;
+	}
+	
+	.container24 .large-13-offset-right {
+		position: relative;
+		right: 54.16%;
+	}
+	
+	.container24 .large-14-offset-right {
+		position: relative;
+		right: 58.33%;
+	}
+	
+	.container24 .large-15-offset-right {
+		position: relative;
+		right: 62.5%;
+	}
+	
+	.container24 .large-16-offset-right {
+		position: relative;
+		right: 66.66%;
+	}
+	
+	.container24 .large-17-offset-right {
+		position: relative;
+		right: 70.93%;
+	}
+	
+	.container24 .large-18-offset-right {
+		position: relative;
+		right: 75%;
+	}
+	
+	.container24 .large-19-offset-right {
+		position: relative;
+		right: 79.16%;
+	}
+	
+	.container24 .large-20-offset-right {
+		position: relative;
+		right: 83.33%;
+	}
+	
+	.container24 .large-21-offset-right {
+		position: relative;
+		right: 87.5%;
+	}
+	
+	.container24 .large-22-offset-right {
+		position: relative;
+		right: 91.66%;
+	}
+	
+	.container24 .large-23-offset-right {
+		position: relative;
+		right: 95.83%;
+	}
+	
+	.container24 .large-24-offset-right {
+		position: relative;
+		right: 100%;
+	}
+	
+}
+
+/****************************************************************
+*                      GENERAL STYLE 	
+*****************************************************************/
+
+html {
+	font-family: Courier New;
+}
