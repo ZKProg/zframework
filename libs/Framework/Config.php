@@ -36,6 +36,40 @@ class Config {
         
     }
 
+    public function getCORSPolicy() {
+
+        $cors = $this->_security_dom->getElementsByTagName('cors');
+
+        foreach ($cors as $node) {
+            if ($node->hasAttribute('allowed')) return (bool)$node->getAttribute('allowed');
+        }
+
+        return false;
+    }
+
+    public function getCORSUrls() {
+
+        $urls_array = [];
+        $urls_no_space_char = [];
+        $cors = $this->_security_dom->getElementsByTagName('cors');
+
+        foreach ($cors as $node) {
+            if ($node->hasAttribute('urls')) {
+
+                $urls_array = explode(',', $node->getAttribute('urls'));
+                break;
+
+            }
+        }
+
+        // Remove spaces
+        foreach ($urls_array as $url) {
+            array_push($urls_no_space_char, str_replace(' ', '', $url));
+        }
+
+        return $urls_no_space_char;
+    }
+
     /**
      * Get the value of _routes_dom
      */ 

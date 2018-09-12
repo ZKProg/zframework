@@ -10,7 +10,7 @@
     define('BR', '<br/>');
 
     $authorized_routes = array(
-        'localhost', '::1'
+        'localhost', '::1', 
     );
 
     require_once('./vendor/autoload.php');
