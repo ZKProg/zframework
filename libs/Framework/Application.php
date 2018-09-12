@@ -25,6 +25,7 @@
             ));
 
             //////////////////////////////////////////////////////////////////////
+            // INIT main components of the application
             $this->_httpRequest = new HttpRequest;
             $this->_httpResponse = new HttpResponse;
             $this->_logEngine = new LogEngine;
