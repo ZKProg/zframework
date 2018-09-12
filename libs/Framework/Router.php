@@ -4,15 +4,12 @@ namespace Framework;
 
 class Router {
 
-    protected $_xml_doc = null;
     protected $_routes = [];
 
-    public function __construct() {
+    public function __construct(\DOMDocument $routes_dom_doc) {
         
-        $file = new \DOMDocument('1.0', 'utf-8');
-        if ($file->load($_SERVER['DOCUMENT_ROOT'] . '/config/routes.xml') !== FALSE) {
 
-            $routes = $file->getElementsByTagName('route');
+            $routes = $routes_dom_doc->getElementsByTagName('route');
 
             foreach ($routes as $key => $route) {
 
@@ -30,10 +27,6 @@ class Router {
                     die('One of the routes is not configured correctly.');
                 }
             }
-
-        } else {
-            die('The config file could not be loaded.');
-        }
     }
 
     public function isRouteMatching($url, Route $route) {
