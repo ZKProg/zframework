@@ -2,7 +2,7 @@
 
 namespace Framework;
 
-class Config {
+class Config extends ConfigXMLParser {
 
     protected $_config_ini;
     protected $_routes_dom;

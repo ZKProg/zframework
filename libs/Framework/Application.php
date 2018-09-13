@@ -11,6 +11,7 @@
         protected $_router;
         protected $_config;
         protected $_conn, $_db;
+        protected $_mailer;
 
         public function __construct() {
 

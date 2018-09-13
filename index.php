@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Author: Karim Zerf
+ * Name: ZFramework
+ * Version: 0.2 alpha
+ * Licence: MIT
+ */
+
     session_start();
 
     /*****************************************

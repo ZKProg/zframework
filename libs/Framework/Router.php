@@ -29,6 +29,11 @@ class Router {
             }
     }
 
+    public function __destruct()
+    {
+        $this->_routes = NULL;
+    }
+
     public function isRouteMatching($url, Route $route) {
 
         if ($route->get_url() === $url) return true;
@@ -53,4 +58,12 @@ class Router {
         return false;
     }
 
+
+    /**
+     * Get the value of _routes
+     */ 
+    public function get_routes()
+    {
+        return $this->_routes;
+    }
 }
