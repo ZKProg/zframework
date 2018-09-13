@@ -10,7 +10,7 @@
         protected $_logEngine;
         protected $_router;
         protected $_config;
-        public $_conn, $_db;
+        protected $_conn, $_db;
 
         public function __construct() {
 

@@ -23,60 +23,60 @@ body {
 		margin: auto;
 	}
 	
-	.container div[class*=large],
-	.container24 div[class*=large] {
+	.container div[class*=l],
+	.container24 div[class*=l] {
 		float: left;
 	}
 	
 	/***************************************************************************
-	 * 	SYSTEME 12
+	 * 	SYSTEM 12
 	 */
 	
-	.container .large-12 {
+	.container .l-12 {
 		width: 100%;
 	}
 	
-	.container .large-11 {
+	.container .l-11 {
 		width: 91.66%;
 	}
 	
-	.container .large-10 {
+	.container .l-10 {
 		width: 83.33%;
 	}
 	
-	.container .large-9 {
+	.container .l-9 {
 		width: 75%;
 	}
 	
-	.container .large-8 {
+	.container .l-8 {
 		width: 66.66%;
 	}
 	
-	.container .large-7 {
+	.container .l-7 {
 		width: 58.33%;
 	}
 	
-	.container .large-6 {
+	.container .l-6 {
 		width: 50%;
 	}
 	
-	.container .large-5 {
+	.container .l-5 {
 		width: 41.66%;
 	}
 	
-	.container .large-4 {
+	.container .l-4 {
 		width: 33.33%;
 	}
 	
-	.container .large-3 {
+	.container .l-3 {
 		width: 25%;
 	}
 	
-	.container .large-2 {
+	.container .l-2 {
 		width: 16.66%;
 	}
 	
-	.container .large-1 {
+	.container .l-1 {
 		width: 8.33%;
 	}
 	
@@ -84,62 +84,62 @@ body {
 	 * 	OFFSET RIGHT RULES 12
 	 */
 	
-	.container .large-1-offset-right {
+	.container .l-1-offset-right {
 		position: relative;
 		left: 8.33%;
 	}
 	
-	.container .large-2-offset-right {
+	.container .l-2-offset-right {
 		position: relative;
 		left: 16.66%;
 	}
 	
-	.container .large-3-offset-right {
+	.container .l-3-offset-right {
 		position: relative;
 		left: 25%;
 	}
 	
-	.container .large-4-offset-right {
+	.container .l-4-offset-right {
 		position: relative;
 		left: 33.33%;
 	}
 	
-	.container .large-5-offset-right {
+	.container .l-5-offset-right {
 		position: relative;
 		left: 41.66%;
 	}
 	
-	.container .large-6-offset-right {
+	.container .l-6-offset-right {
 		position: relative;
 		left: 50%;
 	}
 	
-	.container .large-7-offset-right {
+	.container .l-7-offset-right {
 		position: relative;
 		left: 58.33%;
 	}
 	
-	.container .large-8-offset-right {
+	.container .l-8-offset-right {
 		position: relative;
 		left: 66.66%;
 	}
 	
-	.container .large-9-offset-right {
+	.container .l-9-offset-right {
 		position: relative;
 		left: 75%;
 	}
 	
-	.container .large-10-offset-right {
+	.container .l-10-offset-right {
 		position: relative;
 		left: 83.33%;
 	}
 	
-	.container .large-11-offset-right {
+	.container .l-11-offset-right {
 		position: relative;
 		left: 91.66%;
 	}
 	
-	.container .large-12-offset-right {
+	.container .l-12-offset-right {
 		position: relative;
 		left: 100%;
 	}
@@ -148,164 +148,164 @@ body {
 	 * 	OFFSET LEFT RULES 12
 	 */
 	
-	.container .large-1-offset-left {
+	.container .l-1-offset-left {
 		position: relative;
 		right: 8.33%;
 	}
 	
-	.container .large-2-offset-left {
+	.container .l-2-offset-left {
 		position: relative;
 		right: 16.66%;
 	}
 	
-	.container .large-3-offset-left {
+	.container .l-3-offset-left {
 		position: relative;
 		right: 25%;
 	}
 	
-	.container .large-4-offset-left {
+	.container .l-4-offset-left {
 		position: relative;
 		right: 33.33%;
 	}
 	
-	.container .large-5-offset-left {
+	.container .l-5-offset-left {
 		position: relative;
 		right: 41.66%;
 	}
 	
-	.container .large-6-offset-left {
+	.container .l-6-offset-left {
 		position: relative;
 		right: 50%;
 	}
 	
-	.container .large-7-offset-left {
+	.container .l-7-offset-left {
 		position: relative;
 		right: 58.33%;
 	}
 	
-	.container .large-8-offset-left {
+	.container .l-8-offset-left {
 		position: relative;
 		right: 66.66%;
 	}
 	
-	.container .large-9-offset-left {
+	.container .l-9-offset-left {
 		position: relative;
 		right: 75%;
 	}
 	
-	.container .large-10-offset-left {
+	.container .l-10-offset-left {
 		position: relative;
 		right: 83.33%;
 	}
 	
-	.container .large-11-offset-left {
+	.container .l-11-offset-left {
 		position: relative;
 		right: 91.66%;
 	}
 	
-	.container .large-12-offset-left {
+	.container .l-12-offset-left {
 		position: relative;
 		right: 100%;
 	}
 
 	
 	/***************************************************************
-	 * 	SYSTEME 24
+	 * 	SYSTEM 24
 	 */
 	
-	.container24 .large-1 {
+	.container24 .l-1 {
 		width: 4.16%;
 	}
 	
-	.container24 .large-2 {
+	.container24 .l-2 {
 		width: 8.33%;
 	}
 	
-	.container24 .large-3 {
+	.container24 .l-3 {
 		width: 12.5%;
 	}
 	
-	.container24 .large-4 {
+	.container24 .l-4 {
 		width: 16.66%;
 	}
 	
-	.container24 .large-5 {
+	.container24 .l-5 {
 		width: 20.83%;
 	}
 	
-	.container24 .large-6 {
+	.container24 .l-6 {
 		width: 25%;
 	}
 	
-	.container24 .large-7 {
+	.container24 .l-7 {
 		width: 29.16%;
 	}
 	
-	.container24 .large-8 {
+	.container24 .l-8 {
 		width: 33.33%;
 	}
 	
-	.container24 .large-9 {
+	.container24 .l-9 {
 		width: 37.5%;
 	}
 	
-	.container24 .large-10 {
+	.container24 .l-10 {
 		width: 41.66%;
 	}
 	
-	.container24 .large-11 {
+	.container24 .l-11 {
 		width: 45.83%;
 	}
 	
-	.container24 .large-12 {
+	.container24 .l-12 {
 		width: 50%;
 	}
 	
-	.container24 .large-13 {
+	.container24 .l-13 {
 		width: 54.16%;
 	}
 	
-	.container24 .large-14 {
+	.container24 .l-14 {
 		width: 58.33%;
 	}
 	
-	.container24 .large-15 {
+	.container24 .l-15 {
 		width: 62.5%;
 	}
 	
-	.container24 .large-16 {
+	.container24 .l-16 {
 		width: 66.66%;
 	}
 	
-	.container24 .large-17 {
+	.container24 .l-17 {
 		width: 70.83%;
 	}
 	
-	.container24 .large-18 {
+	.container24 .l-18 {
 		width: 75%;
 	}
 	
-	.container24 .large-19 {
+	.container24 .l-19 {
 		width: 79.16%;
 	}
 	
-	.container24 .large-20 {
+	.container24 .l-20 {
 		width: 83.33%;
 	}
 	
-	.container24 .large-21 {
+	.container24 .l-21 {
 		width: 87.5%;
 	}
 	
-	.container24 .large-22 {
+	.container24 .l-22 {
 		width: 91.66%;
 	}
 	
-	.container24 .large-23 {
+	.container24 .l-23 {
 		width: 95.83%;
 	}
 	
-	.container24 .large-24 {
+	.container24 .l-24 {
 		width: 100%;
 	}
 	
@@ -313,122 +313,122 @@ body {
 	 * 	OFFSET RIGHT RULES 24
 	 */
 	
-	.container24 .large-1-offset-right {
+	.container24 .l-1-offset-right {
 		position: relative;
 		left: 4.16%;
 	}
 	
-	.container24 .large-2-offset-right {
+	.container24 .l-2-offset-right {
 		position: relative;
 		left: 8.33%;
 	}
 	
-	.container24 .large-3-offset-right {
+	.container24 .l-3-offset-right {
 		position: relative;
 		left: 12.5%;
 	}
 	
-	.container24 .large-4-offset-right {
+	.container24 .l-4-offset-right {
 		position: relative;
 		left: 16.66%;
 	}
 	
-	.container24 .large-5-offset-right {
+	.container24 .l-5-offset-right {
 		position: relative;
 		left: 20.83%;
 	}
 	
-	.container24 .large-6-offset-right {
+	.container24 .l-6-offset-right {
 		position: relative;
 		left: 25%;
 	}
 	
-	.container24 .large-7-offset-right {
+	.container24 .l-7-offset-right {
 		position: relative;
 		left: 29.16%;
 	}
 	
-	.container24 .large-8-offset-right {
+	.container24 .l-8-offset-right {
 		position: relative;
 		left: 33.33%;
 	}
 	
-	.container24 .large-9-offset-right {
+	.container24 .l-9-offset-right {
 		position: relative;
 		left: 37.5%;
 	}
 	
-	.container24 .large-10-offset-right {
+	.container24 .l-10-offset-right {
 		position: relative;
 		left: 41.66%;
 	}
 	
-	.container24 .large-11-offset-right {
+	.container24 .l-11-offset-right {
 		position: relative;
 		left: 45.83%;
 	}
 	
-	.container24 .large-12-offset-right {
+	.container24 .l-12-offset-right {
 		position: relative;
 		left: 50%;
 	}
 	
-	.container24 .large-13-offset-right {
+	.container24 .l-13-offset-right {
 		position: relative;
 		left: 54.16%;
 	}
 	
-	.container24 .large-14-offset-right {
+	.container24 .l-14-offset-right {
 		position: relative;
 		left: 58.33%;
 	}
 	
-	.container24 .large-15-offset-right {
+	.container24 .l-15-offset-right {
 		position: relative;
 		left: 62.5%;
 	}
 	
-	.container24 .large-16-offset-right {
+	.container24 .l-16-offset-right {
 		position: relative;
 		left: 66.66%;
 	}
 	
-	.container24 .large-17-offset-right {
+	.container24 .l-17-offset-right {
 		position: relative;
 		left: 70.93%;
 	}
 	
-	.container24 .large-18-offset-right {
+	.container24 .l-18-offset-right {
 		position: relative;
 		left: 75%;
 	}
 	
-	.container24 .large-19-offset-right {
+	.container24 .l-19-offset-right {
 		position: relative;
 		left: 79.16%;
 	}
 	
-	.container24 .large-20-offset-right {
+	.container24 .l-20-offset-right {
 		position: relative;
 		left: 83.33%;
 	}
 	
-	.container24 .large-21-offset-right {
+	.container24 .l-21-offset-right {
 		position: relative;
 		left: 87.5%;
 	}
 	
-	.container24 .large-22-offset-right {
+	.container24 .l-22-offset-right {
 		position: relative;
 		left: 91.66%;
 	}
 	
-	.container24 .large-23-offset-right {
+	.container24 .l-23-offset-right {
 		position: relative;
 		left: 95.83%;
 	}
 	
-	.container24 .large-24-offset-right {
+	.container24 .l-24-offset-right {
 		position: relative;
 		left: 100%;
 	}
@@ -437,122 +437,122 @@ body {
 	 * 	OFFSET LEFT RULES 24
 	 */
 	
-	.container24 .large-1-offset-right {
+	.container24 .l-1-offset-right {
 		position: relative;
 		right: 4.16%;
 	}
 	
-	.container24 .large-2-offset-right {
+	.container24 .l-2-offset-right {
 		position: relative;
 		right: 8.33%;
 	}
 	
-	.container24 .large-3-offset-right {
+	.container24 .l-3-offset-right {
 		position: relative;
 		right: 12.5%;
 	}
 	
-	.container24 .large-4-offset-right {
+	.container24 .l-4-offset-right {
 		position: relative;
 		right: 16.66%;
 	}
 	
-	.container24 .large-5-offset-right {
+	.container24 .l-5-offset-right {
 		position: relative;
 		right: 20.83%;
 	}
 	
-	.container24 .large-6-offset-right {
+	.container24 .l-6-offset-right {
 		position: relative;
 		right: 25%;
 	}
 	
-	.container24 .large-7-offset-right {
+	.container24 .l-7-offset-right {
 		position: relative;
 		right: 29.16%;
 	}
 	
-	.container24 .large-8-offset-right {
+	.container24 .l-8-offset-right {
 		position: relative;
 		right: 33.33%;
 	}
 	
-	.container24 .large-9-offset-right {
+	.container24 .l-9-offset-right {
 		position: relative;
 		right: 37.5%;
 	}
 	
-	.container24 .large-10-offset-right {
+	.container24 .l-10-offset-right {
 		position: relative;
 		right: 41.66%;
 	}
 	
-	.container24 .large-11-offset-right {
+	.container24 .l-11-offset-right {
 		position: relative;
 		right: 45.83%;
 	}
 	
-	.container24 .large-12-offset-right {
+	.container24 .l-12-offset-right {
 		position: relative;
 		right: 50%;
 	}
 	
-	.container24 .large-13-offset-right {
+	.container24 .l-13-offset-right {
 		position: relative;
 		right: 54.16%;
 	}
 	
-	.container24 .large-14-offset-right {
+	.container24 .l-14-offset-right {
 		position: relative;
 		right: 58.33%;
 	}
 	
-	.container24 .large-15-offset-right {
+	.container24 .l-15-offset-right {
 		position: relative;
 		right: 62.5%;
 	}
 	
-	.container24 .large-16-offset-right {
+	.container24 .l-16-offset-right {
 		position: relative;
 		right: 66.66%;
 	}
 	
-	.container24 .large-17-offset-right {
+	.container24 .l-17-offset-right {
 		position: relative;
 		right: 70.93%;
 	}
 	
-	.container24 .large-18-offset-right {
+	.container24 .l-18-offset-right {
 		position: relative;
 		right: 75%;
 	}
 	
-	.container24 .large-19-offset-right {
+	.container24 .l-19-offset-right {
 		position: relative;
 		right: 79.16%;
 	}
 	
-	.container24 .large-20-offset-right {
+	.container24 .l-20-offset-right {
 		position: relative;
 		right: 83.33%;
 	}
 	
-	.container24 .large-21-offset-right {
+	.container24 .l-21-offset-right {
 		position: relative;
 		right: 87.5%;
 	}
 	
-	.container24 .large-22-offset-right {
+	.container24 .l-22-offset-right {
 		position: relative;
 		right: 91.66%;
 	}
 	
-	.container24 .large-23-offset-right {
+	.container24 .l-23-offset-right {
 		position: relative;
 		right: 95.83%;
 	}
 	
-	.container24 .large-24-offset-right {
+	.container24 .l-24-offset-right {
 		position: relative;
 		right: 100%;
 	}
