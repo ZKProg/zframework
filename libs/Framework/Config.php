@@ -2,56 +2,50 @@
 
 namespace Framework;
 
-class Config extends ConfigXMLParser {
+class Config {
 
     protected $_config_ini;
-    protected $_routes_dom;
-    protected $_security_dom;
-
-    protected $_values = [];
+    protected $_routes_xml;
+    protected $_security_xml;
 
     public function __construct($init = 'config/config.ini', 
                                 $routes = "config/routes.xml", 
                                 $security = 'config/security.xml') {
+
+
+        $this->_routes_xml = new ConfigXMLParser($routes);      
+        $this->_security_xml = new ConfigXMLParser($security);
         
         if (($this->_config_ini = \parse_ini_file($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . $init)) === FALSE) {
 
             die('The ini config file could not be loaded.');
             
         }
-
-        $this->_routes_dom = new \DOMDocument('1.0', 'utf-8');
-        if ($this->_routes_dom->load($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . $routes) === FALSE) {
-            
-            die('The routes config file could not be loaded.');
-        
-        }               
-
-        $this->_security_dom = new \DOMDocument('1.0', 'utf-8');
-        if ($this->_security_dom->load($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . $security) === FALSE) {
-            
-            die('The security config file could not be loaded.');
-        
-        }
         
     }
 
     public function getCORSPolicy() {
 
-        $cors = $this->_security_dom->getElementsByTagName('cors');
+        $policy = $this->_security_xml->getNodeAttributeValue('cors', 'allowed');
 
-        foreach ($cors as $node) {
-            if ($node->hasAttribute('allowed')) return (bool)$node->getAttribute('allowed');
-        }
+        if ($policy !== false) 
+            return $policy;
+        else 
+            throw new \RuntimeException('Bad Security Policy. Check the tag requested, or the config file.');
 
-        return false;
     }
 
+    /**
+     * Returns an array containing the URLs parsed in the CORS security policy .xml file.
+     * Those URLs are declared allowed for CORS.
+     *
+     * @return array
+     */
     public function getCORSUrls() {
 
         $urls_array = [];
         $urls_no_space_char = [];
-        $cors = $this->_security_dom->getElementsByTagName('cors');
+        $cors = $this->_security_xml->getTagNodesList('cors');
 
         foreach ($cors as $node) {
             if ($node->hasAttribute('urls')) {
@@ -71,43 +65,13 @@ class Config extends ConfigXMLParser {
     }
 
     /**
-     * Get the value of _routes_dom
-     */ 
-    public function get_routes_dom()
-    {
-        return $this->_routes_dom;
-    }
-
-    /**
-     * Set the value of _routes_dom
+     * Returns the DOMDocument routes.xml to the Router.
+     * In that case, the Router class is in charge to parse the DOMDocument.
      *
-     * @return  self
-     */ 
-    public function set_routes_dom($_routes_dom)
-    {
-        $this->_routes_dom = $_routes_dom;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of _security_dom
-     */ 
-    public function get_security_dom()
-    {
-        return $this->_security_dom;
-    }
-
-    /**
-     * Set the value of _security_dom
-     *
-     * @return  self
-     */ 
-    public function set_security_dom($_security_dom)
-    {
-        $this->_security_dom = $_security_dom;
-
-        return $this;
+     * @return \DOMDocument
+     */
+    public function get_routes_dom() {
+        return $this->_routes_xml->get_dom_document();
     }
 
     /**
@@ -116,17 +80,5 @@ class Config extends ConfigXMLParser {
     public function get_config_ini()
     {
         return $this->_config_ini;
-    }
-
-    /**
-     * Set the value of _config_ini
-     *
-     * @return  self
-     */ 
-    public function set_config_ini($_config_ini)
-    {
-        $this->_config_ini = $_config_ini;
-
-        return $this;
     }
 }

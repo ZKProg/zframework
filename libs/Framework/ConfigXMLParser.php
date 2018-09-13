@@ -2,7 +2,7 @@
 
 namespace Framework;
 
-abstract class ConfigXMLParser {
+class ConfigXMLParser {
 
     protected $_dom_document = NULL;
 
@@ -12,6 +12,7 @@ abstract class ConfigXMLParser {
 
         if (!$this->_dom_document->load($config_file)) {
             // TODO Log the error + action
+            die('XML Config parser error');
         }
 
     }
@@ -23,7 +24,7 @@ abstract class ConfigXMLParser {
      * @param string $tag
      * @return mixed
      */
-    protected function getTagNodeList($tag) {  
+    public function getTagNodesList($tag) {  
 
         return $this->_dom_document->getElementsByTagName((string)$tag);
 
@@ -37,9 +38,9 @@ abstract class ConfigXMLParser {
      * @param string $attribute
      * @return mixed
      */
-    protected function getNodeAttributeValue($tag, $attribute) {
+    public function getNodeAttributeValue($tag, $attribute) {
 
-        $nodes = $this->getTagNodeList($tag);
+        $nodes = $this->getTagNodesList($tag);
 
         foreach($nodes as $key => $node) {
             if ($node->hasAttribute($attribute)) return $node->getAttribute($attribute);
@@ -50,9 +51,11 @@ abstract class ConfigXMLParser {
     }
 
     /**
-     * Get the value of _dom_document
+     * Returns the DOMDocument, for classes needing just that.
+     * 
+     * @return \DOMDocument
      */ 
-    protected function get_dom_document()
+    public function get_dom_document()
     {
         return $this->_dom_document;
     }
