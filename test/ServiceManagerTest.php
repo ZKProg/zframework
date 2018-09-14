@@ -19,15 +19,10 @@ class EncryptionEngineTest extends \PHPUnit\Framework\TestCase {
     }
 
     public function dataProviderAddition() {
-        return array(
-            array(1, 1, 2),
-            array(2, 2, 4),
-            array(1, 3, 4),
-        );
+        
     }
 
-    public function testGetServices() {
+    // TODO Implement tests
 
-       print_r($this->_service_manager->get_services());
-    }
+  
 }

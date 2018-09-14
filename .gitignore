@@ -1,5 +1,9 @@
 ./config/config.ini
-./templates
-./vendor
+./templates/cache
+./templates/hello.twig
+./vendor/composer
+./vendor/symfony
+./vendor/twig
+./vendor/autoload.php
 ./doc/uml.dia.autosave
 

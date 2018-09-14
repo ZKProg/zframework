@@ -22,13 +22,13 @@
     );
 
     require_once('./vendor/autoload.php');
-    require_once('./libs/autoload.php');
+    //require_once('./libs/autoload.php');
 
-    $autoload_index = new Autoloader('./libs', 'Framework');
-    $autoload_index->register();
+    //$autoload_index = new Autoloader('./libs', 'Framework');
+    // $autoload_index->register();
 
-    $autoload_controller = new Autoloader('./src', 'Controller');
-    $autoload_controller->register();
+    // $autoload_controller = new Autoloader('./src', 'Controller');
+    // $autoload_controller->register();
 
     $app = new Framework\Application;
     

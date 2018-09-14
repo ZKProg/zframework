@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <services>
-    <service name="mailer" />
+    <service name="zmailer" />
+    <service name="zusers" />
 </services>

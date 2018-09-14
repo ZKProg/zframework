@@ -4,7 +4,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Framework\\": "libs/Framework"
+            "Framework\\": "libs/Framework",
+            "Controller\\": "src/Controller",
+            "Zmailer\\": "vendor/zmailer/src",
+            "Zusers\\": "vendor/zusers/src"
         }
     }
 }
