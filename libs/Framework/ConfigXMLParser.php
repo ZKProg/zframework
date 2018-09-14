@@ -31,7 +31,7 @@ class ConfigXMLParser {
     }
 
     /**
-     * Returns the value of a given $tag and attribute combination.
+     * Returns the FIRST value of a given $tag and attribute combination.
      * Returns False if the attribute is not found.
      *
      * @param \DOMNode $node
@@ -47,6 +47,27 @@ class ConfigXMLParser {
         }
 
         return false;
+
+    }
+
+    /**
+     * Returns ALL the values of a given $tag and attribute combination.
+     * Returns False no attribute is found.
+     *
+     * @param \DOMNode $node
+     * @param string $attribute
+     * @return mixed
+     */
+    public function getNodeAttributeValues($tag, $attribute) {
+
+        $nodes = $this->getTagNodesList($tag);
+        $values = [];
+
+        foreach($nodes as $key => $node) {
+            if ($node->hasAttribute($attribute)) \array_push($values, $node->getAttribute($attribute));
+        }
+
+        return empty($values) ? false : $values;
 
     }
 

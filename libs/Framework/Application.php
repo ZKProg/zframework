@@ -12,6 +12,7 @@
         protected $_config;
         protected $_conn, $_db;
         protected $_mailer;
+        protected $_service_manager;
 
         public function __construct() {
 
@@ -34,6 +35,7 @@
             $this->_router = new Router($this->_config->get_routes_dom());        
             $this->_conn = new DBConnection($this->_config->get_config_ini());
             $this->_db = $this->_conn->getMySQLConnection();
+            $this->_service_manager = new ServiceManager();
             
         }
 

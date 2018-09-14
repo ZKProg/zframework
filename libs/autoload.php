@@ -33,7 +33,7 @@ class Autoloader {
 
         $file_name = $total_include_os_path . $this->_file_extension;
         $absolute_file_name =  $_SERVER['DOCUMENT_ROOT']. DIRECTORY_SEPARATOR . $file_name;
-       
+
         if (file_exists($absolute_file_name)) require_once($absolute_file_name);
     }
 
