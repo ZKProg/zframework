@@ -22,4 +22,5 @@ class ServiceManager {
     {
         return $this->_services;
     }
+
 }

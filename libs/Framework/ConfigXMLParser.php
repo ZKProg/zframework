@@ -10,7 +10,8 @@ class ConfigXMLParser {
 
         $this->_dom_document = new \DOMDocument('1.0', 'utf-8');
 
-        if (!$this->_dom_document->load($config_file)) {
+        // TODO Create a more robust path pattern
+        if (!$this->_dom_document->load(__DIR__ . '/../../' . $config_file)) {
             // TODO Log the error + action
             die('XML Config parser error');
         }

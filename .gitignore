@@ -1,5 +1,5 @@
 ./config/config.ini
-./templates/*
-./vendor/*
+./templates
+./vendor
 ./doc/uml.dia.autosave
 
