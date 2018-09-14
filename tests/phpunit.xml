@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<phpunit 
+	verbose="true"
+	colors="true"
+	backupGlobals="false"
+	backupStaticAttributes="false"
+	strict="true"
+	bootstrap="../vendor/autoload.php"
+	>
+
+</phpunit>
