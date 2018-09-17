@@ -2,7 +2,7 @@
 
     namespace Framework;
 
-    class Application {
+    class Application extends LogEngine {
 
         protected $_render_template = null;
         protected $_httpRequest;
@@ -16,25 +16,28 @@
 
         public function __construct() {
 
-            
-            // TWIG Setup  
-            $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../templates');
+                // Construct of LogEngine
+                parent::__construct();
+                
+                // TWIG Setup  
+                $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../templates');
 
-            $this->_render_template = new \Twig_Environment($loader, array(
-                // 'cache' => __DIR__ . '/../../templates/cache',
-                'cache' => false,
-            ));
+                $this->_render_template = new \Twig_Environment($loader, array(
+                        // 'cache' => __DIR__ . '/../../templates/cache',
+                        'cache' => false,
+                ));
 
-            
-            // INIT main components of the application
-            $this->_httpRequest = new HttpRequest;
-            $this->_logEngine = new LogEngine;
-            $this->_config = new Config;    
-            $this->_httpResponse = new HttpResponse($this->_config->getCORSPolicy(), $this->_config->getCORSUrls());
-            $this->_router = new Router($this->_config->get_routes_dom());        
-            $this->_conn = new DBConnection($this->_config->get_config_ini());
-            $this->_db = $this->_conn->getMySQLConnection();
-            $this->_service_manager = new ServiceManager();    
+                
+                // INIT main components of the application
+                $this->_httpRequest = new HttpRequest;
+                $this->_config = new Config;    
+                $this->_httpResponse = new HttpResponse($this->_config->getCORSPolicy(), $this->_config->getCORSUrls());
+                $this->_router = new Router($this->_config->get_routes_dom());        
+                $this->_conn = new DBConnection($this->_config->get_config_ini());
+                $this->_db = $this->_conn->getMySQLConnection();
+                $this->_service_manager = new ServiceManager();   
+                
+                $this->logMessage('Framework core modules loaded.');
 
             
         }
@@ -122,5 +125,12 @@
         public function get_db()
         {             
                 return $this->_db;
+        }
+
+        /**
+         * Get the service manager
+         */
+        public function get_service_manager() {
+                return $this->_service_manager;
         }
     }

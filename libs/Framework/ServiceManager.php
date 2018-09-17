@@ -2,7 +2,7 @@
 
 namespace Framework;
 
-class ServiceManager {
+class ServiceManager extends LogEngine {
 
     protected $_config_xml;
     protected $_services_from_conf = [];
@@ -10,6 +10,8 @@ class ServiceManager {
     protected $_services = [];
 
     public function __construct($config_file = 'config/services.xml') {
+
+        parent::__construct();
 
         $this->_config_xml = new ConfigXMLParser($config_file);
         $this->_services_from_conf = $this->_config_xml->getNodeAttributeValues('service', 'name');
@@ -48,12 +50,12 @@ class ServiceManager {
     public function get_service($name)
     {
         // TODO to move to the get service method
-        $class_wanted = '\\' . ucfirst($name) . '\\' . ucfirst($name);
-        
+        $needed_class = '\\' . ucfirst($name) . '\\' . ucfirst($name);
+        $this->logMessage('Loading Service: ' . $name);
 
         foreach ($this->_services as $service) {
 
-            if ($service->get_instance() instanceof $class_wanted) {
+            if ($service->get_instance() instanceof $needed_class) {
                 
                 // The class is already created. Returns the actual instance.
                 return $this->get_instance();
@@ -61,15 +63,15 @@ class ServiceManager {
             } else {
 
                 // The class doesn't exist. It is created here, and the instance is set and returned.
-                $class = new $class_wanted();
+                
+                $class = new $needed_class();
                 $service->set_instance($class);
+                
                 return $service->get_instance();
-
+               
             }
 
         }
-
-          
 
         throw new \RuntimeException('Call to a non existing service: ' . $service->get_name());
            
