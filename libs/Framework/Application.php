@@ -36,9 +36,6 @@
                 $this->_conn = new DBConnection($this->_config->get_config_ini());
                 $this->_db = $this->_conn->getMySQLConnection();
                 $this->_service_manager = new ServiceManager();   
-                
-                $zmailer = $this->_service_manager->get_service('zmailer');
-                $zmailer->sendMail('karim.zerf@zkprog.com', array('karim.zerf@zkprog.com'), 'try', 'Hello <b>World</b>');
 
             
         }
