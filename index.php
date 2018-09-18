@@ -18,17 +18,10 @@
     define('BR', '<br/>');
 
     $authorized_routes = array(
-        'localhost', '::1', 
+        '127.0.0.1', 'localhost', '::1', 
     );
 
     require_once('./vendor/autoload.php');
-    //require_once('./libs/autoload.php');
-
-    //$autoload_index = new Autoloader('./libs', 'Framework');
-    // $autoload_index->register();
-
-    // $autoload_controller = new Autoloader('./src', 'Controller');
-    // $autoload_controller->register();
 
     $app = new Framework\Application;
     

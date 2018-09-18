@@ -16,7 +16,7 @@
 
         public function __construct() {
 
-                // Construct of LogEngine
+                // Construction of LogEngine
                 parent::__construct();
                 
                 // TWIG Setup  
@@ -37,7 +37,8 @@
                 $this->_db = $this->_conn->getMySQLConnection();
                 $this->_service_manager = new ServiceManager();   
                 
-                $this->logMessage('Framework core modules loaded.');
+                $zmailer = $this->_service_manager->get_service('zmailer');
+                $zmailer->sendMail('karim.zerf@zkprog.com', array('karim.zerf@zkprog.com'), 'try', 'Hello <b>World</b>');
 
             
         }

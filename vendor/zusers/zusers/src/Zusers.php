@@ -1,6 +1,6 @@
 <?php
 
-namespace Zusers;
+namespace Zusers\Zusers;
 
 class Zusers {
 
