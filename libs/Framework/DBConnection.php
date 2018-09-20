@@ -9,14 +9,14 @@ class DBConnection {
 
     public function __construct($db_config) {
 
-        if (isset($db_config['host']) && isset($db_config['db']) && isset($db_config['passwd'])) {
+        if (isset($db_config['database']['host']) && isset($db_config['database']['db']) && isset($db_config['database']['passwd'])) {
 
-            $this->_host = $db_config['host'];
-            $this->_db = $db_config['db'];
-            $this->_user = $db_config['user'];
-            $this->_passwd = $db_config['passwd'];
-            $this->_port = isset($db_config['port']) ? $db_config['port'] : 3306;
-            $this->_charset = isset($db_config['charset']) ? $db_config['charset'] : 'latin1';
+            $this->_host = $db_config['database']['host'];
+            $this->_db = $db_config['database']['db'];
+            $this->_user = $db_config['database']['user'];
+            $this->_passwd = $db_config['database']['passwd'];
+            $this->_port = isset($db_config['database']['port']) ? $db_config['database']['port'] : 3306;
+            $this->_charset = isset($db_config['database']['charset']) ? $db_config['database']['charset'] : 'latin1';
 
         } else {
             throw new \RuntimeException('Check your DB config file. At least one parameter is missing.');

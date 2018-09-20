@@ -6,4 +6,5 @@
 ./vendor/twig
 ./vendor/autoload.php
 ./doc/uml.dia.autosave
+./vendor/zusers/zusers/bin/config.ini
 

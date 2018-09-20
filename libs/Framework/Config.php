@@ -16,7 +16,7 @@ class Config {
         $this->_routes_xml = new ConfigXMLParser($routes);      
         $this->_security_xml = new ConfigXMLParser($security);
         
-        if (($this->_config_ini = \parse_ini_file($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . $init)) === FALSE) {
+        if (($this->_config_ini = \parse_ini_file($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . $init, true)) === FALSE) {
 
             die('The ini config file could not be loaded.');
             
