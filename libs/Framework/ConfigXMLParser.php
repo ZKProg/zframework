@@ -1,7 +1,14 @@
 <?php 
+/**
+ * Author: Karim Zerf
+ * License: MIT.
+ */
 
 namespace Framework;
 
+/**
+ * The ConfigXMLParser class is a helper class, that opens XML files, and provides for a set of utility methods, specific to the needs of the framework.
+ */
 class ConfigXMLParser {
 
     protected $_dom_document = NULL;
@@ -10,9 +17,9 @@ class ConfigXMLParser {
 
         $this->_dom_document = new \DOMDocument('1.0', 'utf-8');
 
-        // TODO Create a more robust path pattern
+        // TODO: Create a more robust path pattern
         if (!$this->_dom_document->load(__DIR__ . '/../../' . $config_file)) {
-            // TODO Log the error + action
+            // TODO: Log the error + action
             die('XML Config parser error');
         }
 
