@@ -47,7 +47,7 @@
          */
         public function __construct() {
 
-                // Construction of LogEngine
+                // Constructs of LogEngine
                 parent::__construct();
                 
                 // TWIG Setup  
