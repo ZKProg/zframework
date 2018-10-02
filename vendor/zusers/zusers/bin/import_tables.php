@@ -1,7 +1,17 @@
 <?php
+/**
+ * Author: Karim Zerf
+ * License: MIT.
+ */
 
 // Semi-Procedural script to create the necessary tables
 
+/**
+ * This class permits to create all the necessary tables. This file needs to be run in CLI.
+ * 
+ * *Note* that the default configuration file is the one located at the root of the folder bin. If removed, the config file used 
+ * will be the one from the ZFramework itself.
+ */
 class CreateTables {
 
     protected $_pdo = null;
