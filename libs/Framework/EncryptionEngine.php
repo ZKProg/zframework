@@ -1,4 +1,7 @@
 <?php
+/**
+ * TODO: implement the encryption engine. Dummy class for placeholder.
+ */
 
 namespace Framework;
 
@@ -10,9 +13,5 @@ class EncryptionEngine {
             return null;
         }
     }
-
-   
-
-
 
 }

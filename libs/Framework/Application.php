@@ -78,7 +78,7 @@
          * - To find the actual requested URL, and match it with a known route (from the routes.xml config file).
          * - To create the relevant controller (coupling the controller/action paradigm) to the *first* matching route found by the router.
          * 
-         * In the situation where the router cannot fing any matching route, the Application will render and return the default 404 template. 
+         * In the situation where the router cannot find any matching route, the Application will render and return the default 404 template. 
          *
          * @return void
          */

@@ -1,7 +1,23 @@
 <?php
-
+/**
+ * Author: Karim Zerf
+ * License: MIT.
+ */
 namespace Framework;
 
+/**
+ * The Service Manager is a class that creates registered services, according to what is declared in the configuration file.
+ * 
+ * The instances of the created services are stored in an array, that can be returned at convenience. It can also return a specific service, 
+ * upon the call of a simple method.
+ * 
+ * The services are instantiated only once during the cycle of a full Request/Response. When a service is requested several times from a controller, 
+ * the ServiceManager will:
+ * 1- Return the already existing instance of the Service if the corresponding class has already been created.
+ * 2- Instantiate the corresponding service class if the instance does not exist in the first place.
+ * 
+ * This way, we avoid creating unecessary - multiple - instances of (sometimes) memory demanding services.
+ */
 class ServiceManager extends LogEngine {
 
     protected $_config_xml;
@@ -9,6 +25,11 @@ class ServiceManager extends LogEngine {
     protected $_services_names = [];
     protected $_services = [];
 
+    /**
+     * Here, the constructor takes in parameter its own config file.
+     *
+     * @param string $config_file
+     */
     public function __construct($config_file = 'config/services.xml') {
 
         parent::__construct();
@@ -25,10 +46,24 @@ class ServiceManager extends LogEngine {
 
     }
 
+    /**
+     * Returns the number of created services, known to the application.
+     * 
+     * @param void
+     * @return int 
+     */
     public function count_services() {
         return count($this->_services);
     }
 
+
+    /**
+     * Returns an array containing the *names* of the registered services. Note that we are only talking about strings here.
+     * It can be useful for debugging, or backend development.
+     *
+     * @param void
+     * @return array
+     */
     public function list_services() {
         $list = [];
         foreach ($this->_services as $service) {
@@ -41,7 +76,7 @@ class ServiceManager extends LogEngine {
 
 
     /**
-     * Loads a service by name, as specified in the services.xml config file.
+     * Loads a service by name, as specified in the services.xml configuration file.
      * Returns the service, or throw an Exception if the service cannot be found.
      *
      * @param string $name

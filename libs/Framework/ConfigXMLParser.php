@@ -26,7 +26,7 @@ class ConfigXMLParser {
     }
 
     /**
-     * Returns the NodeList for a given string.
+     * Returns the NodeList for a given string tag.
      * Return False if none is found.
      *
      * @param string $tag
@@ -39,10 +39,10 @@ class ConfigXMLParser {
     }
 
     /**
-     * Returns the FIRST value of a given $tag and attribute combination.
+     * Returns the *FIRST* value of a given $tag and attribute combination.
      * Returns False if the attribute is not found.
      *
-     * @param \DOMNode $node
+     * @param string $tag
      * @param string $attribute
      * @return mixed
      */
@@ -62,7 +62,7 @@ class ConfigXMLParser {
      * Returns ALL the values of a given $tag and attribute combination.
      * Returns False no attribute is found.
      *
-     * @param \DOMNode $node
+     * @param string $tag
      * @param string $attribute
      * @return mixed
      */

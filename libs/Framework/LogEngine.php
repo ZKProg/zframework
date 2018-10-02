@@ -1,13 +1,24 @@
 <?php 
-
+/**
+ * Author: Karim Zerf
+ * License: MIT.
+ */
 namespace Framework;
 
+/**
+ * This class allows code from within Controllers to log custom messages into the log file.
+ * 
+ * The path of the file to be used for logging messages can be changed in the .ini configuration file.
+ */
 abstract class LogEngine {
 
     protected $_log_file_path;
     protected $_log_file;
     protected $_config;
 
+    /**
+     * Creates a Config instance to get the needed configuration parameters. The log file is opened in append mode.
+     */
     public function __construct() {
 
         $this->_config = new Config;
@@ -27,11 +38,19 @@ abstract class LogEngine {
 
     }
 
+    /**
+     * Makes sure the log file handle is closed when the instance is destructed.
+     */
     public function __destruct()
     {
         fclose($this->_log_file);
     }
 
+    /**
+     * Self-explanatory. Creates a datetime string in the format m-d-Y @ hh:mm:ss
+     *
+     * @return void
+     */
     public function getCurrentTimeString() {
     
         $time_array = localtime(time(), True);
@@ -42,6 +61,12 @@ abstract class LogEngine {
                         $time_array['tm_sec'];
     }
 
+    /**
+     * That is the method that you should call, from within the controller, to actually log a message into the defined log file.
+     *
+     * @param string $message
+     * @return void
+     */
     public function logMessage($message) {
 
         $lines_to_log = $this->getCurrentTimeString() . ' ==> ' . $message . PHP_EOL;
