@@ -17,12 +17,18 @@ class CreateTables {
     protected $_pdo = null;
     protected $_host, $_db, $_user, $_passwd, $_port, $_charset;
 
+    /**
+     * Establishing the connection with database set up in config.ini
+     * The .ini file considered is in priority the one located at the root of the ZUsers bin folder.
+     * If no config.ini file is to be found there, the service will parse the config.ini file of the ZFramework.
+     */
     public function __construct() {
 
         // We use in priority the config.ini located at the root of zusers/zusers/bin
         if (file_exists(__DIR__ . DIRECTORY_SEPARATOR . 'config.ini')) {
 
-            if (($db_config = parse_ini_file(__DIR__ . DIRECTORY_SEPARATOR . 'config.ini')) === FALSE) {
+            // Associative ini parsing
+            if (($db_config = parse_ini_file(__DIR__ . DIRECTORY_SEPARATOR . 'config.ini', True)) === FALSE) {
 
                 die('The ini config file could not be loaded.');
 
@@ -31,8 +37,8 @@ class CreateTables {
         // If no config.ini is located in the bin folder, parse the Zframework global config.ini
         } else {
 
-            
-            if (($db_config = parse_ini_file(__DIR__ . '/../../../../config/config.ini')) === FALSE) {
+            // Associative ini parsing
+            if (($db_config = parse_ini_file(__DIR__ . '/../../../../config/config.ini', True)) === FALSE) {
 
                 die('The ini config file could not be loaded.');
 
@@ -40,35 +46,44 @@ class CreateTables {
 
         }
 
-        
-        if (isset($db_config['database_users']['host']) && isset($db_config['database_users']['db']) && isset($db_config['database_users']['passwd'])) {
+        try {
+            if (isset($db_config['database_users']['host']) && isset($db_config['database_users']['db']) && isset($db_config['database_users']['passwd'])) {
 
-            $this->_host = $db_config['database_users']['host'];
-            $this->_db = $db_config['database_users']['db'];
-            $this->_user = $db_config['database_users']['user'];
-            $this->_passwd = $db_config['database_users']['passwd'];
-            $this->_port = isset($db_config['database_users']['port']) ? $db_config['database_users']['port'] : 3306;
-            $this->_charset = isset($db_config['database_users']['charset']) ? $db_config['database_users']['charset'] : 'latin1';
+                $this->_host = $db_config['database_users']['host'];
+                $this->_db = $db_config['database_users']['db'];
+                $this->_user = $db_config['database_users']['user'];
+                $this->_passwd = $db_config['database_users']['passwd'];
+                $this->_port = isset($db_config['database_users']['port']) ? $db_config['database_users']['port'] : 3306;
+                $this->_charset = isset($db_config['database_users']['charset']) ? $db_config['database_users']['charset'] : 'latin1';
 
-        } else {
-            throw new \RuntimeException('Check your database config file. At least one parameter is missing.');
+            } else {
+                throw new \RuntimeException('Check your database config file. At least one parameter is missing.');
+            }
+        } catch (\Exception $e) {
+            echo $e->getMessage() . PHP_EOL;
         }
 
         $dsn = 'mysql:host=' . $this->_host . ';dbname=' . $this->_db . ';charset=' . $this->_charset;
        
-            try {
+        try {
                 
-                $this->_pdo = new \PDO($dsn, $this->_user, $this->_passwd);
-                $this->_pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-                $this->_pdo->setAttribute(\PDO::ATTR_TIMEOUT, 10);
+            $this->_pdo = new \PDO($dsn, $this->_user, $this->_passwd);
+            $this->_pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            $this->_pdo->setAttribute(\PDO::ATTR_TIMEOUT, 10);
 
-            } catch (\PDOException $e) {
-                echo $e->getMessage() . BR;
-            }
+        } catch (\PDOException $e) {
+            echo $e->getMessage() . PHP_EOL;
+        }
         
     }
 
 
+    /**
+     * Method creating the tables for the ZUsers service.
+     * Also populates with default roles the table "roles".
+     *
+     * @return void
+     */
     public function createTables() {
         
         $users_table_string = "CREATE TABLE IF NOT EXISTS `". $this->_db . "`.`users` (
@@ -117,7 +132,7 @@ class CreateTables {
 
                 printf("Table 'roles' should now be populated." . PHP_EOL);
 
-            } catch (PDOException $e) {
+            } catch (\PDOException $e) {
 
                 printf($e->getMessage());
 

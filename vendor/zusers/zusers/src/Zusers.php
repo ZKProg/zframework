@@ -6,10 +6,11 @@ use Framework;
 
 class Zusers {
 
-    protected $_config;
     protected $_db;
 
-    public function __construct() {
+    public function __construct(\PDO &$db) {
+
+        $this->_db = $db;
 
     }
 }
