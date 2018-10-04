@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <routes>
-    <route url="/" controller="home" action="index" />
+    <route url="/news-(.+)-([0-9]+)" controller="home" action="index" vars="foo,foobis"/>
     <route url="/hello" controller="home" action="hello" />
 </routes>

@@ -38,6 +38,14 @@ class Router {
                         $route->getAttribute('action')
                     );
 
+                    // Check if the route has variables
+                    if ($route->hasAttribute('vars')) {
+
+                        $variables_array = explode(',', str_replace(' ', '', $route->getAttribute('vars')));
+                        $new_route->set_vars($variables_array);
+
+                    }
+
                     array_push($this->_routes, $new_route);
 
                 } else {
@@ -66,7 +74,7 @@ class Router {
      */
     public function isRouteMatching($url, Route $route) {
 
-        if ($route->get_url() === $url) return true;
+        if (preg_match('~^' . $url . '~$', $route->get_url())) return true;
 
         return false;
     }
@@ -82,7 +90,29 @@ class Router {
     public function getMatchedRoute($url) {
 
         foreach ($this->_routes as $key => $route) {
-            if ($url === $route->get_url()) return $route;
+
+            if (preg_match('~^' . $route->get_url() . '~', $url, $matches)) {
+                
+                // TODO: Rename the method and attribute _url_regex_elements with a more relevant name
+                $vars = [];
+                $route_vars = $route->get_vars();
+
+                if ($route->hasVars()) {
+                    
+                    foreach ($matches as $key => $value) {      
+                                      
+                        if ($key !== 0) { // preg_match behavior. The first array value is the full string pattern of the regex.
+                            
+                            $vars[$route_vars[$key-1]] =  htmlspecialchars($value);
+
+                        }
+                    }
+
+                    $route->set_url_regex_elements($vars);
+                }
+
+                return $route;
+            }
         }
 
         return false;

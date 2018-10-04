@@ -7,13 +7,19 @@ use \Framework\Application;
 class HomeController {
 
     protected $_app = null;
+    protected $_url_regex_elements;
 
-    public function __construct(Application &$app) {
+    public function __construct(Application &$app, $url_regex_elements = []) {
+
         $this->_app = $app;
+        $this->_url_regex_elements = $url_regex_elements;
+
     }
 
     public function indexAction() {
-        phpinfo();
+        echo 'Basics are functional.' . BR;
+        print_r($this->_url_regex_elements);
+        
     }
 
     public function helloAction() {

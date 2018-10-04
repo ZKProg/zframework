@@ -94,7 +94,7 @@
                 // Instance $this passed by reference to the controller.
                 $controller_to_call = '\\Controller\\' . ucfirst($route->get_controller()) . 'Controller';
 
-                $controller = new $controller_to_call($this);
+                $controller = new $controller_to_call($this, $route->get_url_regex_elements());
 
                 // 3 Execute the relevant action (call the corresponding method from the controller just created)
                 $action_to_call = ucfirst($route->get_action()) . 'Action';

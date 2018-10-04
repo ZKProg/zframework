@@ -17,6 +17,8 @@ class Route {
     protected $_url;
     protected $_controller;
     protected $_action;
+    protected $_vars = [];
+    protected $_url_regex_elements = []; // Associative array $var_name => $var_value
 
     /**
      * The constructor takes three parameters, that define in turn a route.
@@ -31,6 +33,16 @@ class Route {
         $this->_controller = $controller;
         $this->_action = $action;
 
+    }
+
+    /**
+     * Returns wether or not this route contains any variables
+     *
+     * @param void
+     * @return boolean
+     */
+    public function hasVars() {
+        return !empty($this->_vars);
     }
 
     /**
@@ -107,6 +119,46 @@ class Route {
     public function set_action($_action)
     {
         $this->_action = $_action;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of _url_regex_elements
+     */ 
+    public function get_url_regex_elements()
+    {
+        return $this->_url_regex_elements;
+    }
+
+    /**
+     * Set the value of _url_regex_elements
+     *
+     * @return  self
+     */ 
+    public function set_url_regex_elements($_url_regex_elements)
+    {
+        $this->_url_regex_elements = $_url_regex_elements;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of _vars
+     */ 
+    public function get_vars()
+    {
+        return $this->_vars;
+    }
+
+    /**
+     * Set the value of _vars
+     *
+     * @return  self
+     */ 
+    public function set_vars($_vars)
+    {
+        $this->_vars = $_vars;
 
         return $this;
     }
