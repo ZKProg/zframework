@@ -93,7 +93,7 @@ class Router {
 
             if (preg_match('~^' . $route->get_url() . '~', $url, $matches)) {
                 
-                // TODO: Rename the method and attribute _url_regex_elements with a more relevant name
+                // TODO: Rename the method and attribute _url_regex_elements with a more relevant name (code refactoring)
                 $vars = [];
                 $route_vars = $route->get_vars();
 
