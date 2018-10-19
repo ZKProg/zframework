@@ -31,5 +31,9 @@ class HomeController {
         $user_service = $this->_app->_service_manager->get_service('zusers', array(
             'db' => $this->_app->get_db()));
         
+
+        $user_service->createUser(
+            'zedka29', 'john', 'doe', 'walouuu@gmail.com', 'dfDksDfladfkj', 'visitor'
+        );
     }
 }
