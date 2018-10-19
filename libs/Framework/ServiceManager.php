@@ -99,7 +99,7 @@ class ServiceManager extends LogEngine {
 
                 // The class doesn't exist. It is created here, and the instance is set and returned.
                 
-                // If not arguments array is passed (class not requiring arguments)
+                // If no arguments array is passed (class not requiring arguments)
                 if ($args === null) {
 
                     $class = new $needed_class();
