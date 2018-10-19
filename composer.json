@@ -8,7 +8,8 @@
             "Framework\\": "libs/Framework",
             "Controller\\": "src/Controller",
             "Zmailer\\": "vendor/zmailer/zmailer/src",
-            "PHPMailer\\": "vendor/phpmailer/phpmailer/src"
+            "PHPMailer\\": "vendor/phpmailer/phpmailer/src",
+            "Zusers\\": "vendor/zusers/zusers/src"
         }
     }
 }

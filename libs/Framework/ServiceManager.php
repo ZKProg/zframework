@@ -82,7 +82,7 @@ class ServiceManager extends LogEngine {
      * @param string $name
      * @return \Framework\Service
      */
-    public function get_service($name)
+    public function get_service($name, $args = null)
     {
         // TODO to move to the get service method
         $needed_class = '\\' . ucfirst($name) . '\\' . ucfirst($name);
@@ -99,15 +99,39 @@ class ServiceManager extends LogEngine {
 
                 // The class doesn't exist. It is created here, and the instance is set and returned.
                 
-                $class = new $needed_class();
-                $service->set_instance($class);
+                // If not arguments array is passed (class not requiring arguments)
+                if ($args === null) {
+
+                    $class = new $needed_class();
+                    $service->set_instance($class);
                 
-                return $service->get_instance();
-               
+                    return $service->get_instance();
+                    
+                // If an argument(s) array is passed to the get_service function (for classes requiring arguments to be instantiated)
+                } else {
+
+                    $arguments_string = "";
+
+                    if (gettype($args) == 'array') {
+
+                        // Instantiate the class by passing the array in argument. The service class constructor is responsible 
+                        // for getting the parameters out of the array.
+                        $class = new $needed_class($args);
+                        $service->set_instance($class);
+
+                        return $service->get_instance();
+
+                    } else {
+                        die('Only associative arrays are allowed to be passed to the get_service function.');
+                    }
+
+                }
+ 
             }
 
         }
 
+        // If no matching service is found, throw exception.
         throw new \RuntimeException('Call to a non existing service: ' . $service->get_name());
            
     }

@@ -30,7 +30,7 @@ class CreateTables {
             // Associative ini parsing
             if (($db_config = parse_ini_file(__DIR__ . DIRECTORY_SEPARATOR . 'config.ini', True)) === FALSE) {
 
-                die('The ini config file could not be loaded.');
+                die('The ini config file could not be loaded.' . PHP_EOL);
 
             } 
 
@@ -40,7 +40,7 @@ class CreateTables {
             // Associative ini parsing
             if (($db_config = parse_ini_file(__DIR__ . '/../../../../config/config.ini', True)) === FALSE) {
 
-                die('The ini config file could not be loaded.');
+                die('The ini config file could not be loaded.'. PHP_EOL);
 
             } 
 
@@ -111,9 +111,9 @@ class CreateTables {
    
             printf("Tables successfully created (or already existing)." . PHP_EOL);
 
-        } catch (PDOException $e) {
+        } catch (\RuntimeException $e) {
 
-            printf($e->getMessage());
+            printf('Error trying to create the tables into database: ' . $e->getMessage());
 
         }
 
@@ -143,5 +143,9 @@ class CreateTables {
 
 }
 
-$create_tables = new CreateTables;
-$create_tables->createTables();
+try {
+    $create_tables = new CreateTables;
+    $create_tables->createTables();
+} catch (\PDOException $e) {
+    printf("And Exception has occured while trying to create the tables: " . $e->getMessage());
+}

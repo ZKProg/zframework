@@ -22,7 +22,8 @@
         protected $_config;
         protected $_conn, $_db;
         protected $_mailer;
-        protected $_service_manager;
+        
+        public $_service_manager;
 
         /**
          * Application constructor

@@ -24,18 +24,12 @@ class HomeController {
 
     public function helloAction() {
 
-        try {
+        echo 'Hello from the action method hello!<br/>';
+        $services = $this->_app->_service_manager->list_services();
+        print_r($services);
 
-            $query = $this->_app->get_db()->prepare("SELECT * FROM foo WHERE :nom");
-            $args = array(':nom' => 1);
-            $exec = $query->execute($args);
-            $data = $query->fetchAll();
-
-            echo $this->_app->get_render_template()->load('hello.twig.html')->render(array('data' => $data));
-        } catch (\PDOException $e) {
-            die($e->getMessage());
-        }
-
+        $user_service = $this->_app->_service_manager->get_service('zusers', array(
+            'db' => $this->_app->get_db()));
         
     }
 }
