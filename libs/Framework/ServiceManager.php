@@ -84,7 +84,6 @@ class ServiceManager extends LogEngine {
      */
     public function get_service($name, $args = null)
     {
-        // TODO to move to the get service method
         $needed_class = '\\' . ucfirst($name) . '\\' . ucfirst($name);
         $this->logMessage('Loading Service: ' . $name);
 
@@ -93,7 +92,7 @@ class ServiceManager extends LogEngine {
             if ($service->get_instance() instanceof $needed_class) {
                 
                 // The class is already created. Returns the actual instance.
-                return $this->get_instance();
+                return $service->get_instance();
 
             } else {
 
